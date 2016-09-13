@@ -6,14 +6,16 @@ var wronghtml = document.getElementById('wrong');
 var hangman = document.getElementsByClassName('hangman');
 
 
+var reset = [];
 var guess = null;
 var current = [];
+var rightLetters = [];
 var wrongLetters = [];
-
+var flag = 1;
 
 document.addEventListener('keydown', function(e){
     e.preventDefault();
-    if (e.keyCode > 64 && e.keyCode < 91){
+    if (e.keyCode > 64 && e.keyCode < 91 && flag == 1){
         guess = String.fromCharCode(e.keyCode);
         engine();
     }
@@ -28,6 +30,8 @@ for (var i = 0; i < word.length; i++){
 
 
 function engine(){
+    wronghtml.style.color = "red";
+    wronghtml.style.textDecoration = "line-through";
     var correct = false;
     for (var i = 0; i < clue.length; i++){
         if (word[i] == guess){
@@ -40,34 +44,39 @@ function engine(){
         guesshtml.innerHTML = "WRONG";
         if (wrongLetters.indexOf(guess) == -1){
             wrongLetters.push(guess);
+            reset.push(hangman[0]);
             hangman[0].classList.remove('hangman');
         }
     }
-    else{
+    else if (rightLetters.indexOf(guess) == -1) {
         guesshtml.innerHTML = guess + "&#x2714";
         guesshtml.style.color = "green";
+        rightLetters.push(guess);
     }
     wordhtml.innerHTML = current.join('');
-    wronghtml.innerHTML = wrongLetters;
+    wronghtml.innerHTML = wrongLetters.join("   ");
     if (current.join('') === clue.join('')){
+        flag = 0;
         guesshtml.innerHTML = "CORRECT";
         setTimeout(wipe, 3000);
     }
 }
 
 function wipe(){
+    flag = 1;
     currentWord += 1;
     word = words[currentWord];
     clue = word.split('');
     current = [];
     wrongLetters = [];
+    rightLetters = [];
     for (var i = 0; i < word.length; i++){
         current.push('_ ');
     }
     wordhtml.innerHTML = current.join('');
     guesshtml.innerHTML = "";
     wronghtml.innerHTML = wrongLetters;
-
+    reset.map(function(div){div.classList.add('hangman');});
 }
 
 wordhtml.innerHTML = current.join('');
@@ -81,7 +90,7 @@ function initialisePost(){
     startPost = parseInt(startPost) + 5 + 'px';
     post.style.height = startPost;
     var animPost = requestAnimationFrame(initialisePost);
-    if (post.style.height == '500px'){
+    if (post.style.height == '900px'){
         cancelAnimationFrame(animPost);
     }
 }
@@ -89,7 +98,6 @@ function initialisePost(){
 function initialiseBar(){
     startBar = parseInt(startBar) + 1 + '%';
     bar.style.width = startBar;
-    console.log(bar.style.width);
     var animBar = requestAnimationFrame(initialiseBar);
     if (bar.style.width == '95%'){
         cancelAnimationFrame(animBar);
