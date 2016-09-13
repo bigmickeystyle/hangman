@@ -4,6 +4,7 @@ var wordhtml = document.getElementById('word');
 var guesshtml = document.getElementById('guess');
 var wronghtml = document.getElementById('wrong');
 var hangman = document.getElementsByClassName('hangman');
+var pagehtml = document.getElementById('page');
 
 
 var reset = [];
@@ -41,11 +42,19 @@ function engine(){
     }
     if (correct == false){
         guesshtml.style.color = "red";
-        guesshtml.innerHTML = "WRONG";
+        guesshtml.innerHTML = guess + " &#10006";
+        pagehtml.classList.remove('start');
+        pagehtml.classList.add('darker');
         if (wrongLetters.indexOf(guess) == -1){
             wrongLetters.push(guess);
             reset.push(hangman[0]);
             hangman[0].classList.remove('hangman');
+            if (wrongLetters.length == 6){
+                flag = 0;
+                guesshtml.innerHTML = "YOU LOSE";
+                currentWord = 1;
+                setTimeout(wipe, 3000);
+            }
         }
     }
     else if (rightLetters.indexOf(guess) == -1) {
@@ -58,13 +67,13 @@ function engine(){
     if (current.join('') === clue.join('')){
         flag = 0;
         guesshtml.innerHTML = "CORRECT";
+        currentWord += 1;
         setTimeout(wipe, 3000);
     }
 }
 
 function wipe(){
     flag = 1;
-    currentWord += 1;
     word = words[currentWord];
     clue = word.split('');
     current = [];

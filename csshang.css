@@ -1,3 +1,46 @@
+.start {
+	animation-name: tbox;
+	animation-duration: 10s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-delay: 0;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes tbox {
+
+	from {
+		background-color: #525252;
+	}
+
+	to {
+		background-color: #6293e5;
+	}
+}
+
+.darker {
+	animation-name: darker;
+	animation-duration: 10s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes darker {
+
+	from {
+		background-color: #6293e5;
+	}
+
+	to {
+		background-color: grey;
+	}
+}
+
 #page {
     display: inline-block;
     width: 100%;
@@ -40,6 +83,7 @@
     width: 75%;
     height: 100%;
     margin-left: 5%;
+    margin-top: 30px;
 }
 
 #word {
