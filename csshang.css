@@ -1,0 +1,138 @@
+#textbox{
+    width: 80%;
+    height: 100%;
+    min-height: 300px;
+    margin: 0 auto;
+}
+
+#bar {
+    width: 90%;
+    height: 20px;
+    background-color: black;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 12px;
+    border-radius: 15px 15px 15px 0px;
+}
+
+#rope {
+    width: 3px;
+    height: 30%;
+    background-color: black;
+    right: 10%;
+    position: absolute;
+}
+
+
+#post {
+    height: 100%;
+    width: 20px;
+    background-color: black;
+    margin-left: 5%;
+    position: absolute;
+}
+
+
+#word {
+    font-size: 100px;
+    text-align: center;
+    border: 3px solid blue;
+    margin-left: 5%;
+    width: 85%;
+}
+
+#guess {
+    font-size: 100px;
+    text-align: center;
+    color: red;
+    margin-left: 5%;
+    width: 85%;
+}
+
+#wrong {
+    font-size: 50px;
+    text-align: center;
+    margin-left: 5%;
+    width: 85%;
+}
+
+#man {
+    height: 250px;
+    width: 125px;
+    right: 2%;
+    position: absolute;
+    top: 30%;
+}
+
+
+#head {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    border-width: 4px;
+    border: 3px black solid;
+    margin: 0 auto;
+}
+
+.eye {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#leye{
+    left: 17px;
+    top: 15px;
+}
+
+#reye{
+    left: 37px;
+    top: 15px;
+}
+
+#mouth {
+    top: 40px;
+    left: 6px;
+    border-radius: 0 0 90px 90px;
+    width: 50px;
+    height: 5px;
+}
+
+#body {
+    height: 100px;
+    width: 0px;
+    border: 3px black solid;
+    margin: 0 auto;
+}
+
+.limb {
+    width: 65px;
+    position: absolute;
+    border: 3px black solid;
+}
+
+#larm{
+    transform:rotate(30deg);
+    right: 45%;
+}
+
+
+#rarm{
+    transform:rotate(-30deg);
+    right: 1%;
+}
+
+#lleg{
+    transform:rotate(-45deg);
+    top: 200px;
+    right: 45%;
+}
+
+#rleg {
+    transform:rotate(45deg);
+    top: 200px;
+}
+ .hangman {
+     display: none;
+ }
