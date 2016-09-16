@@ -1,10 +1,11 @@
+
+
 .start {
 	animation-name: tbox;
-	animation-duration: 10s;
+	animation-duration: 5s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
-	animation-delay: 0;
 	animation-play-state: running;
 	animation-fill-mode: forwards;
 }
@@ -20,9 +21,9 @@
 	}
 }
 
-.darker {
-	animation-name: darker;
-	animation-duration: 10s;
+.dark {
+	animation-name: dark;
+	animation-duration: 5s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -30,16 +31,123 @@
 	animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes darker {
+@-webkit-keyframes dark {
 
 	from {
 		background-color: #6293e5;
 	}
 
 	to {
-		background-color: grey;
+		background-color: #b3b3ff;
 	}
 }
+
+.darkark {
+	animation-name: darkark;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes darkark {
+
+	from {
+		background-color: #b3b3ff;
+	}
+
+	to {
+		background-color:  #737373;
+	}
+}
+
+.darkarkark {
+	animation-name: darkarkark;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes darkarkark {
+
+	from {
+		background-color: #737373;
+	}
+
+	to {
+		background-color:  #4d4d4d;
+	}
+}
+
+.darkarkarkark {
+	animation-name: darkarkarkark;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes darkarkarkark {
+
+	from {
+		background-color: #4d4d4d;
+	}
+
+	to {
+		background-color:  #404040;
+	}
+}
+
+.darkarkarkarkark {
+	animation-name: darkarkarkarkark;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes darkarkarkarkark {
+
+	from {
+		background-color: #404040;
+	}
+
+	to {
+		background-color:  #660000;
+	}
+}
+
+.darkarkarkarkarkark {
+	animation-name: darkarkarkarkarkark;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes darkarkarkarkarkark {
+
+	from {
+		background-color: #660000;
+	}
+
+	to {
+		background-color:  red;
+	}
+}
+
+
 
 #page {
     display: inline-block;
@@ -91,6 +199,7 @@
     text-align: center;
     margin-left: 5%;
     width: 85%;
+	font-weight: bold;
 }
 
 #guess {
@@ -109,6 +218,15 @@
     color: black;
 }
 
+#highscore {
+	font-size: 50px;
+    margin-left: 5%;
+    color: white;
+	position: absolute;
+	bottom: 0;
+	background-color: black;
+}
+
 #man{
     height: 70%;
     width: 100%;
@@ -119,16 +237,16 @@
     height: 65px;
     width: 65px;
     border-radius: 50%;
-    border-width: 4px;
-    border: 3px black solid;
+    border: 1px black solid;
     margin: 0 auto;
+	background-image: url("images/smile.jpg");
+	background-size: cover;
 }
 
 #body {
-    height: 100px;
-    width: 5px;
+    height: 220px;
+    width: 120px;
     margin: 0 auto;
-    background-color: black;
 }
 
 .limb {
@@ -165,4 +283,11 @@
 
 .hangman {
     display: none;
+}
+
+.hover {
+	cursor: pointer;
+	border-radius: 15px 15px 15px 15px;
+	border: 5px solid black;
+	font-weight: bold;
 }
