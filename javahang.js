@@ -5,17 +5,23 @@ var wraphtml = document.getElementById('wrapper');
 var wordhtml = document.getElementById('word');
 var guesshtml = document.getElementById('guess');
 var wronghtml = document.getElementById('wrong');
-var hangman = document.getElementsByClassName('hangman');
 var pagehtml = document.getElementById('page');
 var post = document.getElementById('post');
 var bar = document.getElementById('bar');
-var head = document.getElementById('head');
 var highscorehtml = document.getElementById('highscore');
 var thunderStrike = new Audio('sounds/thunder3.mp3');
+var canvasMan = document.getElementById("man");
+var contextMan = canvasMan.getContext("2d");
+var catHead = document.getElementById("catHead");
+var catBody = document.getElementById("catBody");
+var catLarm = document.getElementById("catLarm");
+var catRarm = document.getElementById("catRarm");
+var catLleg = document.getElementById("catLleg");
+var catRleg = document.getElementById("catRleg");
+
 
 var highscore = 0;
 var score = 0;
-var reset = [];
 var guess = null;
 var current = [];
 var rightLetters = [];
@@ -65,15 +71,28 @@ function engine(){
         guesshtml.style.color = "red";
         sky += "ark";
         wrongLetters.push(guess);
-        reset.push(hangman[0]);
-        hangman[0].classList.remove('hangman');
+        if (wrongLetters.length == 1){
+            contextMan.drawImage(catHead, 90, 0, 110, 100);
+        }
+
         if (wrongLetters.length == 2){
-            head.style.backgroundImage = "url('images/concerned.png')";
+            contextMan.drawImage(catBody, 53, 74, 200, 200);
         }
+
+        if (wrongLetters.length == 3){
+            contextMan.drawImage(catLarm, 5, 107, 83, 83);
+        }
+
         if (wrongLetters.length == 4){
-            head.style.backgroundImage = "url('images/uhoh.png')";
+            contextMan.drawImage(catRarm, 155, 140, 75, 75);
         }
+
+        if (wrongLetters.length == 5){
+            contextMan.drawImage(catLleg, 115, 260, 60, 60);
+        }
+
         if (wrongLetters.length == 6){
+            contextMan.drawImage(catRleg, 58, 255, 60, 60);
             flag = 0;
             wordhtml.innerHTML = responseWord;
             guesshtml.innerHTML = "YOU LOSE";
@@ -149,11 +168,11 @@ function clean(){
     wrongLetters = [];
     rightLetters = [];
     wronghtml.innerHTML = wrongLetters;
-    reset.map(function(div){div.classList.add('hangman');});
     pagehtml.className = "start";
 }
 
 function initialise(){
+    contextMan.clearRect(0, 0, canvasMan.width, canvasMan.height);
     score = 0;
     clean();
     keyListen();
@@ -213,6 +232,7 @@ function thunder(){
         flag = 1;
     }, 4000);
 }
+
 
 // TODO:
 // fade in castle
