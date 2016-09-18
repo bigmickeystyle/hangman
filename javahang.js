@@ -35,7 +35,6 @@ function keyListen(){
     document.addEventListener('keydown', function(e){
         e.preventDefault();
         if (e.keyCode > 64 && e.keyCode < 91 && flag == 1){
-            console.log(e.key);
             guess = e.key.toUpperCase();
             engine();
         }
@@ -172,7 +171,6 @@ function clean(){
 }
 
 function initialise(){
-    contextMan.clearRect(0, 0, canvasMan.width, canvasMan.height);
     score = 0;
     clean();
     keyListen();
@@ -187,7 +185,7 @@ function initialise(){
 }
 
 function wipe(){
-    console.log("wipe");
+    contextMan.clearRect(0, 0, canvasMan.width, canvasMan.height);
     clean();
     generateClue();
     guesshtml.innerHTML = "";
