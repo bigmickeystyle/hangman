@@ -1,8 +1,31 @@
+.thunder {
+	animation-name: thunder;
+	animation-duration: 0.2s;
+	animation-timing-function: linear;
+	animation-iteration-count: 2;
+	animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
 
+@-webkit-keyframes thunder {
+
+	from {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
 
 .start {
 	animation-name: tbox;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -23,7 +46,7 @@
 
 .dark {
 	animation-name: dark;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -44,7 +67,7 @@
 
 .darkark {
 	animation-name: darkark;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -65,7 +88,7 @@
 
 .darkarkark {
 	animation-name: darkarkark;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -86,7 +109,7 @@
 
 .darkarkarkark {
 	animation-name: darkarkarkark;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -107,7 +130,7 @@
 
 .darkarkarkarkark {
 	animation-name: darkarkarkarkark;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -128,7 +151,7 @@
 
 .darkarkarkarkarkark {
 	animation-name: darkarkarkarkarkark;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -151,10 +174,11 @@
 
 #page {
     display: inline-block;
-    width: 100%;
-    height: 1000px;
+	width: 1280px;
+	height: 720px;
     background-image: url("images/3.png");
     background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #bar {
@@ -225,6 +249,7 @@
 	position: absolute;
 	bottom: 0;
 	background-color: black;
+	border-radius: 20px;
 }
 
 #man{

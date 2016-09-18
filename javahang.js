@@ -1,7 +1,7 @@
 var responseWord;
 var clue;
 
-
+var wraphtml = document.getElementById('wrapper');
 var wordhtml = document.getElementById('word');
 var guesshtml = document.getElementById('guess');
 var wronghtml = document.getElementById('wrong');
@@ -11,6 +11,7 @@ var post = document.getElementById('post');
 var bar = document.getElementById('bar');
 var head = document.getElementById('head');
 var highscorehtml = document.getElementById('highscore');
+var thunderStrike = new Audio('sounds/thunder3.mp3');
 
 var highscore = 0;
 var score = 0;
@@ -58,6 +59,7 @@ function engine(){
         }
     }
     if (!correct && wrongLetters.indexOf(guess) == -1){
+        thunder();
         guesshtml.innerHTML = guess + " &#10006";
         pagehtml.className = sky + "ark";
         guesshtml.style.color = "red";
@@ -95,12 +97,12 @@ function engine(){
 
 function initialiseGallows(){
 
-    startPost = parseInt(startPost) + 10 + 'px';
+    startPost = parseInt(startPost) + 1 + '%';
     post.style.height = startPost;
     startBar = parseInt(startBar) + 1  + '%';
     bar.style.width = startBar;
     var animBar = requestAnimationFrame(initialiseGallows);
-    if (bar.style.width == '95%'){
+    if (bar.style.width == '92%'){
         cancelAnimationFrame(animBar);
     }
 }
@@ -159,7 +161,7 @@ function initialise(){
     wordhtml.innerHTML = "Type 'YES' to start";
     responseWord = 'YES';
     generateClue();
-    if (bar.style.width != '95%' && post.style.height != '900px'){
+    if (bar.style.width != '92%' && post.style.height != '900px'){
         initialiseGallows();
     }
 
@@ -201,8 +203,18 @@ function tryAgain(){
 
 }
 
+
+function thunder(){
+    flag = 0;
+    wraphtml.classList.add('thunder');
+    thunderStrike.play();
+    setTimeout(function(){
+        wraphtml.classList.remove('thunder');
+        flag = 1;
+    }, 4000);
+}
+
 // TODO:
-// highscore board
 // fade in castle
 // clean up code in general
 // fix arms and legs and replace body
