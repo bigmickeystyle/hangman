@@ -10,6 +10,7 @@ var post = document.getElementById('post');
 var bar = document.getElementById('bar');
 var highscorehtml = document.getElementById('highscore');
 var thunderStrike = new Audio('sounds/thunder3.mp3');
+var ding = new Audio('sounds/ding.wav');
 var canvasMan = document.getElementById("man");
 var contextMan = canvasMan.getContext("2d");
 var catHead = document.getElementById("catHead");
@@ -18,6 +19,9 @@ var catLarm = document.getElementById("catLarm");
 var catRarm = document.getElementById("catRarm");
 var catLleg = document.getElementById("catLleg");
 var catRleg = document.getElementById("catRleg");
+
+var touchLetters = document.getElementsByClassName('letter');
+var touchLettersR = document.getElementsByClassName('letterR');
 
 
 var highscore = 0;
@@ -30,6 +34,22 @@ var flag = 1;
 var sky = "d";
 var startPost = 0;
 var startBar = 0;
+
+for (let i= 0; i < touchLetters.length; i++){
+    touchLetters[i].addEventListener('touchstart', function(){
+        console.log(String.fromCharCode(i + 65));
+        guess = String.fromCharCode(i + 65);
+        engine();
+    });
+}
+
+for (let i= 0; i < touchLettersR.length; i++){
+    touchLettersR[i].addEventListener('touchstart', function(){
+        console.log(String.fromCharCode(i + 78));
+        guess = String.fromCharCode(i + 78);
+        engine();
+    });
+}
 
 function keyListen(){
     document.addEventListener('keydown', function(e){
@@ -99,6 +119,7 @@ function engine(){
         }
     }
     else if (correct && rightLetters.indexOf(guess) == -1) {
+        ding.play();
         guesshtml.innerHTML = guess + "&#x2714";
         guesshtml.style.color = "green";
         rightLetters.push(guess);

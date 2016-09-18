@@ -1,3 +1,11 @@
+.letter {
+	display: none;
+}
+
+.letterR {
+	display: none;
+}
+
 .thunder {
 	animation-name: thunder;
 	animation-duration: 0.2s;
@@ -252,55 +260,177 @@
 	border-radius: 20px;
 }
 
-#man{
+#man {
 	margin-top: -25px;
 }
 
-#body {
-    height: 220px;
-    width: 120px;
-    margin: 0 auto;
-}
-
-.limb {
-    width: 50px;
-    height: 5px;
-    background-color: black;
-    position: absolute;
-}
-
-#larm{
-    transform:rotate(30deg);
-    top: 20%;
-    right: 49%;
-}
-
-
-#rarm{
-    transform:rotate(-30deg);
-    top: 20%;
-    left: 49%;
-}
-
-#lleg{
-    transform:rotate(-45deg);
-    top: 52%;
-    right: 45%;
-}
-
-#rleg {
-    transform:rotate(45deg);
-    top: 52%;
-    left: 45%;
-}
-
-.hangman {
-    display: none;
-}
 
 .hover {
 	cursor: pointer;
 	border-radius: 15px 15px 15px 15px;
 	border: 5px solid black;
 	font-weight: bold;
+}
+
+#letterEntry{
+	display: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+
+	.letter {
+		background-color: black;
+		display: block;
+		width : 20px;
+		height: 20px;
+		position: fixed;
+		color: white;
+	}
+
+	.letterR {
+		background-color: black;
+		display: block;
+		width : 20px;
+		height: 20px;
+		position: fixed;
+		color: white;
+		right: 10px;
+	}
+
+	#a, #n{
+		top: 20px;
+	}
+
+	#b, #o{
+		top: 50px;
+	}
+
+	#c, #p {
+		top: 80px;
+	}
+
+	#d, #q {
+		top: 110px;
+	}
+
+	#e, #r {
+		top: 140px;
+	}
+
+	#f, #s {
+		top: 170px;
+	}
+
+	#g, #t {
+		top: 200px;
+	}
+
+	#h, #u {
+		top: 230px;
+	}
+
+	#i, #v {
+		top: 260px;
+	}
+
+	#j, #w {
+		top: 290px;
+	}
+
+	#k, #x {
+		top: 320px;
+	}
+
+	#l, #y {
+		top: 350px;
+	}
+
+	#m, #z {
+		top: 380px;
+	}
+
+	#page {
+		width: 100%;
+		height: 100%;
+		background-size: contain;
+		background-position: bottom;
+	}
+
+	#bar {
+	    width: 0%;
+	    height: 10px;
+	    background-color: #663300;
+	    margin-top: 5px;
+	    border-radius: 15px 15px 15px 0px;
+	    border: 1px black solid;
+	}
+
+	#post{
+	    width: 5%;
+	    height: 0px;
+	    float: left;
+	    background-color: #663300;
+	    border: 3px black solid;
+	}
+
+	#ropebox{
+	    width: 80%;
+	    height: 450px;
+	}
+
+	#rope {
+	    height: 20%;
+	    width: 5px;
+	    background-color: black;
+	    margin: 0 auto;
+	}
+
+	#textbox {
+	    width: 75%;
+	    height: 100%;
+	    margin-left: 5%;
+	    margin-top: 5px;
+		position: relative;
+		clear: both;
+	}
+
+	#word {
+	    font-size: 27px;
+	    text-align: center;
+	    margin-left: 5%;
+		color: white;
+		margin-top: 35%;
+	}
+
+	#guess {
+	    font-size: 20px;
+	    text-align: center;
+	    color: black;
+	    margin-left: 5%;
+	    width: 85%;
+		margin-top: 35%;
+	}
+
+	#wrong {
+	    font-size: 20px;
+	    text-align: center;
+	    margin-top: 35%;
+	    width: 85%;
+		position: absolute;
+		top: 10px;
+	}
+
+	#highscore {
+		font-size: 5px;
+	    margin-left: 5%;
+	    color: white;
+		position: absolute;
+		bottom: 0;
+		background-color: black;
+		border-radius: 2px;
+	}
+	#post {
+		display: none;
+	}
+
 }
