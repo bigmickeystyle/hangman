@@ -11,6 +11,7 @@ var bar = document.getElementById('bar');
 var highscorehtml = document.getElementById('highscore');
 var thunderStrike = new Audio('sounds/thunder3.mp3');
 var ding = new Audio('sounds/ding.wav');
+var catCry = new Audio('sounds/catcry.wav');
 var canvasMan = document.getElementById("man");
 var contextMan = canvasMan.getContext("2d");
 var catHead = document.getElementById("catHead");
@@ -111,6 +112,7 @@ function engine(){
         }
 
         if (wrongLetters.length == 6){
+            catCry.play();
             contextMan.drawImage(catRleg, 58, 255, 60, 60);
             flag = 0;
             wordhtml.innerHTML = responseWord;
@@ -251,11 +253,3 @@ function thunder(){
         flag = 1;
     }, 4000);
 }
-
-
-// TODO:
-// fade in castle
-// clean up code in general
-// fix arms and legs and replace body
-// maybe some noises/music
-// thunder effect

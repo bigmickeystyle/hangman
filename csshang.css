@@ -280,6 +280,7 @@
 
 	.letter {
 		background-color: black;
+		border: 2px solid white;
 		display: block;
 		width : 20px;
 		height: 20px;
@@ -289,12 +290,13 @@
 
 	.letterR {
 		background-color: black;
+		border: 2px solid white;
 		display: block;
 		width : 20px;
 		height: 20px;
 		position: fixed;
 		color: white;
-		right: 10px;
+		right: 15px;
 	}
 
 	#a, #n{
